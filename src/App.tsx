@@ -11,10 +11,21 @@ function App() {
   return (
     <PlanetProvider>
       <div className="w-full h-screen bg-gradient-to-b from-slate-900 via-purple-900 to-black overflow-hidden relative">
+        {/* Loading fallback */}
+        <div className="absolute inset-0 flex items-center justify-center text-white z-10">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500 mb-4"></div>
+            <p className="text-xl">Loading Solar System...</p>
+          </div>
+        </div>
+
         {/* 3D Canvas */}
         <Canvas
           camera={{ position: [0, 5, 10], fov: 75 }}
           className="w-full h-full"
+          onCreated={() => {
+            console.log('Canvas created successfully')
+          }}
         >
           <Suspense fallback={null}>
             {/* Lighting */}

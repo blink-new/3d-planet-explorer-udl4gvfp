@@ -57,32 +57,6 @@ const planetsData: PlanetData[] = [
     size: 0.5,
     orbitRadius: 10,
     orbitSpeed: 0.008
-  },
-  {
-    id: 'jupiter',
-    name: 'Jupiter',
-    type: 'Gas Giant',
-    diameter: '142,984 km',
-    distance: '778.5 million km from Sun',
-    temperature: '-110°C (cloud tops)',
-    description: 'The largest planet in our solar system. Jupiter is a gas giant with a Great Red Spot storm.',
-    color: '#D8CA9D',
-    size: 1.2,
-    orbitRadius: 14,
-    orbitSpeed: 0.005
-  },
-  {
-    id: 'saturn',
-    name: 'Saturn',
-    type: 'Gas Giant',
-    diameter: '120,536 km',
-    distance: '1.43 billion km from Sun',
-    temperature: '-140°C (cloud tops)',
-    description: 'Famous for its prominent ring system. Saturn is less dense than water and would float!',
-    color: '#FAD5A5',
-    size: 1.0,
-    orbitRadius: 18,
-    orbitSpeed: 0.003
   }
 ]
 
@@ -95,6 +69,8 @@ const SolarSystem: React.FC = () => {
       systemRef.current.rotation.y += 0.001
     }
   })
+
+  console.log('SolarSystem component rendering')
 
   return (
     <group ref={systemRef}>

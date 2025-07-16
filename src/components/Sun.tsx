@@ -16,6 +16,8 @@ const Sun: React.FC = () => {
     }
   })
 
+  console.log('Sun component rendering')
+
   return (
     <mesh ref={sunRef} position={[0, 0, 0]}>
       <sphereGeometry args={[1.5, 32, 32]} />
